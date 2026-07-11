@@ -1,0 +1,48 @@
+.common-button {
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: var(--radius-small);
+  font-weight: 700;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    transform 0.2s;
+}
+
+.common-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.common-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.common-button--primary {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.common-button--primary:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+}
+
+.common-button--outline {
+  color: var(--color-primary);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-primary);
+}
+
+.common-button--outline:hover:not(:disabled) {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.common-button--light {
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.common-button--full {
+  width: 100%;
+}

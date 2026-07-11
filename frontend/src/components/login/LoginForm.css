@@ -1,0 +1,143 @@
+.login-form {
+  width: 100%;
+  max-width: 410px;
+  padding: 38px;
+
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-card);
+}
+
+.login-form__heading {
+  margin-bottom: 28px;
+}
+
+.login-form__heading h2 {
+  margin-bottom: 8px;
+  font-size: 28px;
+}
+
+.login-form__heading p {
+  color: var(--color-text-light);
+  font-size: 14px;
+}
+
+.login-form__heading strong {
+  color: var(--color-primary);
+}
+
+.login-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.login-form__field label {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.login-form__field input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+
+  background-color: var(--color-white);
+  border: 1px solid #d9ddd7;
+  border-radius: var(--radius-small);
+}
+
+.login-form__field input:focus {
+  border-color: var(--color-primary);
+}
+
+.login-form__error {
+  margin: -4px 0 15px;
+  color: var(--color-danger);
+  font-size: 12px;
+}
+
+.login-form__options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.login-form__remember {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #666666;
+}
+
+.login-form__remember input {
+  accent-color: var(--color-primary);
+}
+
+.login-form__options a,
+.login-form__signup a {
+  color: var(--color-primary);
+}
+
+.login-form__divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin: 22px 0;
+  color: #aaaaaa;
+  font-size: 12px;
+}
+
+.login-form__divider::before,
+.login-form__divider::after {
+  flex: 1;
+  height: 1px;
+  background-color: #e5e5e5;
+  content: "";
+}
+
+.login-form__google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  width: 100%;
+  height: 44px;
+
+  color: #444444;
+  background-color: var(--color-white);
+  border: 1px solid #dcdcdc;
+  border-radius: var(--radius-small);
+}
+
+.login-form__google:hover {
+  background-color: #f7f7f7;
+}
+
+.login-form__google-icon {
+  font-weight: 900;
+}
+
+.login-form__signup {
+  margin-top: 22px;
+  color: #888888;
+  text-align: center;
+  font-size: 12px;
+}
+
+.login-form__signup a {
+  font-weight: 700;
+}
+
+@media (max-width: 500px) {
+  .login-form {
+    padding: 28px 22px;
+  }
+}

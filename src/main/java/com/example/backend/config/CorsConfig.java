@@ -16,11 +16,12 @@ public class CorsConfig { //s
                 registry.addMapping("/**")
                         .allowedOrigins(
                                 "http://localhost:5173",
-                                "https://sum-quiz-flax.vercel.app",
+                                "https://vercel.com/yaeryung/hwv",
                                 "https://relaxed-alpaca-73fcc7.netlify.app",
                                 "https://fabulous-pothos-d4a9b4.netlify.app",
-                                "https://sum-quiz-liart.vercel.app",
-                                "https://sum-quiz-on7wevlye-yaeryung.vercel.app"
+                                "https://H-WV-liart.vercel.app",
+                                "https://vercel.com/yaeryung/hwv/CZo6hRPTsnjFy4GzexS6FjtxJW5u"
+
                         )
                         .allowedMethods(
                                 "GET",

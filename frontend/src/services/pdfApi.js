@@ -15,4 +15,4 @@ export async function summarizePdf(selectedFile) {
   }
 
   return response.text();
-}
+} // fix

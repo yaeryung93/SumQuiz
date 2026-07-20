@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 import { getProblems } from "../../services/problemApi";
 import "./LabPages.css";
 
 function ProblemListPage() {
+  const navigate = useNavigate();
   const [problems, setProblems] = useState([]);
   const [category, setCategory] = useState("전체");
   const [isLoading, setIsLoading] = useState(true);
@@ -13,14 +14,23 @@ function ProblemListPage() {
   useEffect(() => {
     let active = true;
 
-    getProblems().then((result) => { if (active) setProblems(result); })
+    getProblems().then((result) => {
+      if (!active) return;
+
+      if (result.length === 0) {
+        navigate("/problems/new", { replace: true });
+        return;
+      }
+
+      setProblems(result);
+    })
       .catch((error) => { if (active) setErrorMessage(error.message); })
       .finally(() => { if (active) setIsLoading(false); });
 
     return () => {
       active = false;
     };
-  }, []);
+  }, [navigate]);
 
   const categories = ["전체", ...new Set(problems.map((item) => item.category))];
   const visibleProblems =

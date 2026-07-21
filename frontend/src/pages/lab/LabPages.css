@@ -1847,7 +1847,7 @@
 
 /* Warm orange and cream visual theme */
 .lab-page {
-  background: radial-gradient(circle at 92% 4%, rgb(255 192 137 / 18%), transparent 240px), #fffaf3;
+  background: var(--color-background);
 }
 
 .surface-card,

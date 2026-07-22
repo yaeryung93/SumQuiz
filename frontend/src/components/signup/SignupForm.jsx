@@ -18,6 +18,7 @@ function SignupForm() {
 
   const [errorMessage, setErrorMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
 
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -53,6 +54,11 @@ function SignupForm() {
 
     if (formData.password !== formData.passwordConfirm) {
       setErrorMessage("비밀번호가 일치하지 않습니다.");
+      return;
+    }
+
+    if (!agreedToTerms) {
+      setErrorMessage("이용약관 및 개인정보처리방침에 동의해 주세요.");
       return;
     }
 
@@ -149,6 +155,15 @@ function SignupForm() {
             onChange={handleInputChange}
           />
         </div>
+
+        <label className="signup-form__agreement">
+          <input
+            type="checkbox"
+            checked={agreedToTerms}
+            onChange={(event) => setAgreedToTerms(event.target.checked)}
+          />
+          <span><a href="#terms">이용약관</a> 및 <a href="#privacy">개인정보처리방침</a>에 동의합니다.</span>
+        </label>
 
         {errorMessage && <p className="signup-form__error">{errorMessage}</p>}
 

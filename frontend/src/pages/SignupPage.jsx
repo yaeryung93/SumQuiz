@@ -17,29 +17,29 @@ function SignupPage() {
           <p className="signup-page__eyebrow">Start Java learning with HWV</p>
 
           <h1>
-            Java 코드 한 파일로
+            내 Java 코드로 배우는
             <br />
-            <span>핵심 문법부터 퀴즈까지</span>
+            <span>맞춤형 문법 학습</span>
           </h1>
 
           <p className="signup-page__description">
-            Java 파일을 업로드하면 AI가 코드의 핵심 문법 3개를 분석하고
+            Java 파일을 업로드하면 AI가 코드의 핵심 문법을 분석하고
             <br />
-            문법별 코딩 문제 3개를 만들어드립니다.
+            코드에 맞춘 퀴즈로 학습을 이어갈 수 있어요.
           </p>
 
           <div className="signup-page__features">
             <div>
               <span>1</span>
-              <p><strong>Java 파일 업로드</strong>학습할 .java 파일을 간편하게 등록하세요.</p>
+              <p><strong>파일 업로드</strong>Java 파일을 간편하게 등록하세요.</p>
             </div>
             <div>
               <span>2</span>
-              <p><strong>AI 핵심 문법 분석</strong>코드에서 사용된 핵심 Java 문법 3개를 확인하세요.</p>
+              <p><strong>문법 분석</strong>AI가 코드의 핵심 문법을 분석해 드려요.</p>
             </div>
             <div>
               <span>3</span>
-              <p><strong>코딩 문제와 학습 통계</strong>문제를 풀고 제출 결과와 오답을 확인하세요.</p>
+              <p><strong>맞춤 퀴즈</strong>분석 결과를 바탕으로 맞춤 퀴즈를 풀어요.</p>
             </div>
           </div>
         </section>

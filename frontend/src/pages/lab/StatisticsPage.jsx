@@ -36,6 +36,19 @@ function StatisticsPage() {
   const accuracy =
     statistics?.accuracy ??
     (answerCount ? Math.round((correctAnswers / answerCount) * 100) : 0);
+  const weekDays = ["월", "화", "수", "목", "금", "토", "일"];
+  const weeklyAttempts = Array.from(
+    { length: 7 },
+    (_, index) => statistics?.weeklyAttempts?.[index] ?? 0,
+  );
+  const weeklyMaximum = Math.max(...weeklyAttempts, 1);
+  const weeklyPoints = weeklyAttempts.map((value, index) => ({
+    day: weekDays[index],
+    value,
+    x: 60 + index * 180,
+    y: 130 - (value / weeklyMaximum) * 95,
+  }));
+  const weeklyPolyline = weeklyPoints.map((point) => `${point.x},${point.y}`).join(" ");
 
   if (isLoading) {
     return <div className="lab-page"><section className="large-empty">학습 통계를 불러오고 있습니다.</section></div>;
@@ -121,13 +134,27 @@ function StatisticsPage() {
 
         <section className="surface-card weekly-chart">
           <h2>최근 7일 제출</h2>
-          <div className="weekly-chart__bars">
-            {(statistics?.weeklyAttempts || []).map((value, index) => (
-              <div key={index}>
-                <span style={{ height: value ? value * 12 + "px" : "0" }} />
-                <small>{["월", "화", "수", "목", "금", "토", "일"][index]}</small>
-              </div>
-            ))}
+          <div className="weekly-chart__line">
+            <svg
+              viewBox="0 0 1200 180"
+              role="img"
+              aria-label={`최근 7일 제출 횟수: ${weeklyAttempts.join(", ")}`}
+            >
+              {[35, 82, 130].map((y) => (
+                <line className="weekly-chart__grid-line" x1="60" x2="1140" y1={y} y2={y} key={y} />
+              ))}
+              <polyline className="weekly-chart__polyline" points={weeklyPolyline} />
+              {weeklyPoints.map((point) => (
+                <g key={point.day}>
+                  <circle className="weekly-chart__point-halo" cx={point.x} cy={point.y} r="7" />
+                  <circle className="weekly-chart__point" cx={point.x} cy={point.y} r="4" />
+                  <text className="weekly-chart__value" x={point.x} y={Math.max(17, point.y - 13)}>
+                    {point.value}
+                  </text>
+                  <text className="weekly-chart__day" x={point.x} y="168">{point.day}</text>
+                </g>
+              ))}
+            </svg>
           </div>
         </section>
       </div>

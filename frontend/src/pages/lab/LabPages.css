@@ -1225,34 +1225,62 @@
   grid-column: 1 / -1;
 }
 
-.weekly-chart__bars {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  align-items: end;
-  gap: 20px;
-  height: 190px;
-  padding: 10px 30px 0;
-  border-bottom: 1px solid #dfe4de;
+.weekly-chart__line {
+  width: 100%;
+  margin-top: 18px;
+  overflow-x: auto;
 }
 
-.weekly-chart__bars > div {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  justify-content: flex-end;
-  flex-direction: column;
+.weekly-chart__line svg {
+  display: block;
+  width: 100%;
+  min-width: 560px;
+  height: auto;
+  aspect-ratio: 1200 / 180;
+  overflow: visible;
 }
 
-.weekly-chart__bars span {
-  width: min(46px, 70%);
-  max-height: 145px;
-  background: #ff8a3d;
-  border-radius: 6px 6px 0 0;
+.weekly-chart__grid-line {
+  stroke: #eee5dc;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
 }
 
-.weekly-chart__bars small {
-  margin-top: 8px;
-  color: #7c837c;
+.weekly-chart__polyline {
+  fill: none;
+  stroke: #ec6b2d;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.weekly-chart__point-halo {
+  fill: #fff1e7;
+}
+
+.weekly-chart__point {
+  fill: #ffffff;
+  stroke: #ec6b2d;
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.weekly-chart__value,
+.weekly-chart__day {
+  text-anchor: middle;
+  font-family: inherit;
+}
+
+.weekly-chart__value {
+  fill: #ec6b2d;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.weekly-chart__day {
+  fill: #7c837c;
+  font-size: 12px;
 }
 
 .profile-card {

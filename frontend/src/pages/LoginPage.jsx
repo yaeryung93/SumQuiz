@@ -7,14 +7,11 @@ function LoginPage() {
     <div className="login-page">
       <main className="login-page__main">
         <section className="login-page__introduction">
-          <div className="login-page__brand"><span>♣</span> HWV</div>
+          <div className="login-page__brand">
+            <img src="/images/hwv-logo-cutout.png" alt="HWV" />
+          </div>
 
-          <p className="login-page__description">
-            Java 코드 한 파일로 시작하는<br />
-            나만의 맞춤 학습
-          </p>
-
-          <div className="login-page__illustration">
+          <div className="login-page__illustration" aria-hidden="true">
             <div className="login-page__laptop"><span>&lt;/&gt;</span></div>
             <div className="login-page__books"><i /><i /><i /></div>
             <div className="login-page__mug" />

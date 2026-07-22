@@ -20,7 +20,7 @@ function SignupPage() {
 
           <p className="signup-page__description">
             Java 파일을 업로드하면 AI가 코드의 핵심 문법 3개를 분석하고
-            맞춤형 퀴즈 5개를 만들어드립니다.
+            문법별 코딩 문제 3개를 만들어드립니다.
           </p>
 
           <div className="signup-page__features">
@@ -46,8 +46,8 @@ function SignupPage() {
               <span>3</span>
 
               <p>
-                <strong>맞춤 퀴즈와 학습 통계</strong>
-                문제 5개를 풀고 정답과 오답을 확인하세요.
+                <strong>코딩 문제와 학습 통계</strong>
+                문제를 풀고 제출 결과와 오답을 확인하세요.
               </p>
             </div>
           </div>

@@ -42,9 +42,9 @@ function ProblemListPage() {
     <div className="lab-page">
       <div className="lab-page__heading">
         <div>
-          <span className="lab-page__eyebrow">JAVA PROBLEMS</span>
+          <span className="lab-page__eyebrow">HWV CODE LAB</span>
           <h1>Java 문제</h1>
-          <p>업로드한 Java 코드의 핵심 문법마다 생성된 AI 코딩 문제입니다.</p>
+          <p>Java 코딩 문제를 풀고 학습 기록을 확인하세요.</p>
         </div>
         <Link className="lab-primary-link" to="/problems/new">
           ＋ 새 문제 만들기

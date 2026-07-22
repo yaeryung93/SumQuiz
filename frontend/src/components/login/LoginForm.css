@@ -1,29 +1,17 @@
 .login-form {
-  width: min(100%, 440px);
-  padding: 46px;
+  width: min(100%, 420px);
+  padding: 0;
   background: #ffffff;
-  border: 1px solid #f0e4d9;
-  border-radius: 22px;
-  box-shadow: 0 24px 64px rgb(105 61 22 / 10%);
 }
 
 .login-form__heading {
   margin-bottom: 36px;
 }
 
-.login-form__heading > span {
-  display: block;
-  margin-bottom: 10px;
-  color: var(--color-primary);
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 1.7px;
-}
-
 .login-form__heading h2 {
   margin-bottom: 10px;
   color: #172033;
-  font-size: 28px;
+  font-size: 26px;
   letter-spacing: -1.1px;
 }
 
@@ -70,7 +58,7 @@
   min-height: 52px;
   margin-top: 7px;
   border-radius: 9px;
-  box-shadow: 0 10px 20px rgb(255 107 0 / 18%);
+  box-shadow: none;
 }
 
 .login-form__signup {
@@ -88,6 +76,6 @@
 
 @media (max-width: 520px) {
   .login-form {
-    padding: 34px 24px;
+    padding: 0;
   }
 }

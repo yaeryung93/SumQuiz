@@ -22,13 +22,17 @@ function AppLayout() {
   useEffect(() => {
     let active = true;
 
-    getProblems().then((problems) => {
-      if (active) {
-        setCurrentProblem(
-          problems.find((problem) => problem.progress > 0) || null,
-        );
-      }
-    });
+    getProblems()
+      .then((problems) => {
+        if (active) {
+          setCurrentProblem(
+            problems.find((problem) => problem.progress > 0) || null,
+          );
+        }
+      })
+      .catch(() => {
+        if (active) setCurrentProblem(null);
+      });
 
     return () => {
       active = false;
@@ -48,20 +52,12 @@ function AppLayout() {
           type="button"
           className="lab-brand"
           onClick={() => navigate("/dashboard")}
+          aria-label="HWV 대시보드로 이동"
         >
-          <span className="lab-brand__mark">♣</span>
-          <strong>HWV</strong>
+          <img src="/images/hwv-logo-cutout.png" alt="HWV" />
         </button>
 
         <div className="lab-header__actions">
-          <button
-            type="button"
-            className="lab-icon-button"
-            aria-label="알림"
-          >
-            ♢
-          </button>
-
           <button
             type="button"
             className="lab-profile-button"
@@ -71,7 +67,6 @@ function AppLayout() {
           >
             <span className="lab-avatar">{displayName.slice(0, 1)}</span>
             <span>{displayName}</span>
-            <span>⌄</span>
           </button>
         </div>
       </header>

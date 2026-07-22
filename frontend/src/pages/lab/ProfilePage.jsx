@@ -68,9 +68,9 @@ function ProfilePage() {
     <div className="lab-page lab-page--narrow">
       <div className="lab-page__heading">
         <div>
-          <span className="lab-page__eyebrow">MY PAGE</span>
+          <span className="lab-page__eyebrow">마이페이지</span>
           <h1>마이페이지</h1>
-          <p>계정 정보와 학습 설정을 관리하세요.</p>
+          <p>계정 정보와 GitHub 연동 상태를 관리하세요.</p>
         </div>
       </div>
 
@@ -84,7 +84,7 @@ function ProfilePage() {
         <dl>
           <div>
             <dt>주 사용 언어</dt>
-            <dd>업로드 시 자동 감지</dd>
+            <dd>Java</dd>
           </div>
           <div>
             <dt>목표 난이도</dt>
@@ -99,7 +99,7 @@ function ProfilePage() {
 
       <section className="surface-card account-card">
         <div>
-          <span className="lab-page__eyebrow">ACCOUNT</span>
+          <span className="lab-page__eyebrow">계정</span>
           <h2>계정 관리</h2>
           <p>현재 기기에서 안전하게 로그아웃할 수 있습니다.</p>
         </div>
@@ -108,7 +108,7 @@ function ProfilePage() {
 
       <section className="surface-card github-card">
         <div>
-          <span className="lab-page__eyebrow">GITHUB SOLUTIONS</span>
+          <span className="lab-page__eyebrow">GitHub</span>
           <h2>GitHub 학습 기록 연동</h2>
           <p>통과한 문제 조건과 Solution 코드를 선택한 저장소에 커밋합니다.</p>
         </div>

@@ -54,7 +54,7 @@ function StatisticsPage() {
     <div className="lab-page">
       <div className="lab-page__heading">
         <div>
-          <span className="lab-page__eyebrow">LEARNING REPORT</span>
+          <span className="lab-page__eyebrow">HWV CODE LAB</span>
           <h1>학습 통계</h1>
           <p>AI 코딩 문제 생성과 예상 테스트 통과 기록을 확인하세요.</p>
         </div>

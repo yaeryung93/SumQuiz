@@ -67,25 +67,16 @@ function ProblemCreatePage() {
     <div className="lab-page lab-page--narrow">
       <div className="lab-page__heading">
         <div>
-          <span className="lab-page__eyebrow">JAVA AI LEARNING</span>
+          <span className="lab-page__eyebrow">HWV CODE LAB</span>
           <h1>새 문제 만들기</h1>
           <p>
-            Java 파일을 업로드하면 AI가 핵심 문법 3개를 분석하고 문법별 코딩 문제
-            3개를 만듭니다.
+            Java 파일을 업로드하면 핵심 문법을 분석해 코딩 문제 3개를 만듭니다.
           </p>
         </div>
       </div>
 
       <form className="creation-card" onSubmit={handleAnalyze}>
         <section>
-          <div className="section-heading">
-            <span>1</span>
-            <div>
-              <h2>Java 파일 업로드</h2>
-              <p>분석할 .java 파일 하나를 선택해 주세요.</p>
-            </div>
-          </div>
-
           <div
             className="project-dropzone"
             onDragOver={(event) => event.preventDefault()}
@@ -95,7 +86,7 @@ function ProblemCreatePage() {
             }}
           >
             <strong>Java 파일을 끌어다 놓거나 아래 버튼으로 선택하세요.</strong>
-            <span>.java 파일만 업로드할 수 있습니다.</span>
+            <span>.java 파일만 선택할 수 있습니다.</span>
             <div>
               <button
                 type="button"
@@ -135,7 +126,7 @@ function ProblemCreatePage() {
                   setErrorMessage("");
                 }}
               >
-                초기화
+                파일 제거
               </button>
             </div>
           )}

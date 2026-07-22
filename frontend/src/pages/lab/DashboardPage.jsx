@@ -159,7 +159,7 @@ function DashboardPage() {
         </section>
 
         <section className="surface-card dashboard-guide">
-          <h2>Java 학습 흐름</h2>
+          <h2>학습 흐름</h2>
           <ol>
             {learningSteps.map((step, index) => (
               <li key={step.title} className={step.completed ? "dashboard-guide__step dashboard-guide__step--completed" : "dashboard-guide__step"}>

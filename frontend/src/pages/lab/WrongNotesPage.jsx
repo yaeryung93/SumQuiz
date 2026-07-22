@@ -28,9 +28,9 @@ function WrongNotesPage() {
     <div className="lab-page">
       <div className="lab-page__heading">
         <div>
-          <span className="lab-page__eyebrow">WRONG NOTES</span>
+          <span className="lab-page__eyebrow">AI 문제</span>
           <h1>오답노트</h1>
-          <p>AI 예상 테스트에서 보완이 필요했던 코드를 다시 확인하세요.</p>
+          <p>보완이 필요했던 문제와 피드백을 다시 확인하세요.</p>
         </div>
       </div>
 

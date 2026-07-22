@@ -1697,12 +1697,13 @@
 }
 
 .problem-grid {
-  grid-template-columns: 1fr;
-  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .problem-card {
-  padding: 22px 24px;
+  min-height: 252px;
+  padding: 24px;
 }
 
 .problem-card:hover {
@@ -1710,7 +1711,7 @@
 }
 
 .problem-card p {
-  min-height: auto;
+  min-height: 66px;
 }
 
 .problem-card__progress {
@@ -1723,14 +1724,55 @@
 }
 
 .creation-card {
-  background:
-    radial-gradient(circle at 100% 100%, #fff0e2 0 12%, transparent 12.3%),
-    #ffffff;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .project-dropzone {
+  min-height: 210px;
   background: #fffaf5;
-  border-color: #f1c9a8;
+  border-color: var(--color-primary);
+}
+
+.project-dropzone button,
+.selected-project button {
+  color: var(--color-primary);
+  border-color: #ff9a55;
+}
+
+.selected-project,
+.difficulty-field--creation {
+  margin-top: 18px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #f0e2d5;
+  border-radius: 12px;
+}
+
+.selected-project {
+  padding: 18px 22px;
+}
+
+.selected-project .selected-project__language {
+  color: #8b5b3b;
+  background: #fff0e5;
+}
+
+.selected-project__language b {
+  color: var(--color-primary);
+}
+
+.creation-analyze-button {
+  min-height: 50px;
+  color: #ffffff;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.creation-analyze-button:hover:not(:disabled) {
+  background: var(--color-primary-dark);
 }
 
 .statistics-grid {
@@ -1754,14 +1796,14 @@
 }
 
 .profile-card {
-  grid-template-columns: 84px minmax(180px, 0.8fr) minmax(460px, 1.8fr);
+  grid-template-columns: 96px minmax(200px, 0.8fr) minmax(460px, 1.8fr);
   gap: 24px;
-  padding: 30px;
+  padding: 34px;
 }
 
 .profile-card__avatar {
-  width: 80px;
-  height: 80px;
+  width: 88px;
+  height: 88px;
   background: linear-gradient(135deg, #ff8a30, var(--color-primary));
   box-shadow: 0 12px 24px rgb(255 107 0 / 18%);
 }
@@ -1819,7 +1861,8 @@
   }
 
   .dashboard-grid,
-  .statistics-grid {
+  .statistics-grid,
+  .problem-grid {
     grid-template-columns: 1fr;
   }
 }

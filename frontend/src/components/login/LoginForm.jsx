@@ -33,8 +33,6 @@ function LoginForm() {
       return;
     }
 
-    console.log("로그인 버튼 클릭됨");
-
     if (formData.email.trim() === "") {
       setErrorMessage("이메일을 입력해 주세요.");
       return;
@@ -50,8 +48,6 @@ function LoginForm() {
 
     try {
       const result = await loginUser(formData.email, formData.password);
-
-      console.log("로그인 성공", result);
 
       saveLoginUser(result, formData.email);
 
@@ -69,7 +65,6 @@ function LoginForm() {
   return (
     <section className="login-form">
       <div className="login-form__heading">
-        <span>WELCOME BACK</span>
         <h2>HWV에 오신 걸 환영해요!</h2>
 
         <p>로그인하고 Java 학습을 이어가세요.</p>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
 import Button from "../components/common/Button";
+import { useLanguage } from "../i18n/LanguageContext";
 import {
   getCurrentJavaQuiz,
   submitJavaQuizAnswers,
@@ -9,6 +10,7 @@ import {
 import "./lab/LabPages.css";
 
 function QuizPage() {
+  const { t } = useLanguage();
   const [questions, setQuestions] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedAnswers, setSelectedAnswers] = useState({});
@@ -59,7 +61,7 @@ function QuizPage() {
     }
   }
 
-  if (isLoading) return <div className="lab-page lab-page--narrow"><section className="large-empty">문제를 불러오고 있습니다...</section></div>;
+  if (isLoading) return <div className="lab-page lab-page--narrow"><section className="large-empty">{t("loadingProblems")}</section></div>;
 
   if (questions.length === 0) {
     return (

@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
 import { getWrongNotes } from "../../services/problemApi";
+import { useLanguage } from "../../i18n/LanguageContext";
 import "./LabPages.css";
 
 function WrongNotesPage() {
+  const { t } = useLanguage();
   const [notes, setNotes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
@@ -36,7 +38,7 @@ function WrongNotesPage() {
 
       <section className="surface-card">
         {isLoading ? (
-          <div className="large-empty">오답노트를 불러오고 있습니다...</div>
+          <div className="large-empty">{t("loadingWrongNotes")}</div>
         ) : errorMessage ? (
           <p className="form-error" role="alert">{errorMessage}</p>
         ) : notes.length === 0 ? (

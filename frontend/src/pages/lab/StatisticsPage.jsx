@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 
 import { getLearningStatistics } from "../../services/problemApi";
+import { useLanguage } from "../../i18n/LanguageContext";
 import "./LabPages.css";
 
 function StatisticsPage() {
+  const { t } = useLanguage();
   const [statistics, setStatistics] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
@@ -67,14 +69,14 @@ function StatisticsPage() {
   const weeklyArea = `70,165 ${weeklyPolyline} 1130,165`;
 
   if (isLoading) {
-    return <div className="lab-page"><section className="large-empty">학습 통계를 불러오고 있습니다.</section></div>;
+    return <div className="lab-page"><section className="large-empty">{t("loadingStats")}</section></div>;
   }
 
   if (errorMessage && !statistics) {
     return (
       <div className="lab-page"><section className="large-empty">
         <strong>학습 통계를 불러오지 못했습니다.</strong><span>{errorMessage}</span>
-        <button type="button" className="lab-primary-link" onClick={handleReload}>다시 불러오기</button>
+        <button type="button" className="lab-primary-link" onClick={handleReload}>{t("retry")}</button>
       </section></div>
     );
   }

@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
 
 import { getProblems } from "../../services/problemApi";
+import { useLanguage } from "../../i18n/LanguageContext";
 import "./LabPages.css";
 
 function ProblemListPage() {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [problems, setProblems] = useState([]);
   const [category, setCategory] = useState("전체");
@@ -71,7 +73,7 @@ function ProblemListPage() {
       )}
 
       {isLoading ? (
-        <section className="large-empty">문제 목록을 불러오고 있습니다...</section>
+        <section className="large-empty">{t("loadingProblems")}</section>
       ) : errorMessage ? (
         <p className="form-error" role="alert">{errorMessage}</p>
       ) : visibleProblems.length ? (

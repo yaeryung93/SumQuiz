@@ -3,9 +3,11 @@ import { Link } from "react-router";
 
 import { getDashboardSummary } from "../../services/problemApi";
 import { getSessionUser } from "../../services/session";
+import { useLanguage } from "../../i18n/LanguageContext";
 import "./LabPages.css";
 
 function DashboardPage() {
+  const { t } = useLanguage();
   const [summary, setSummary] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -74,14 +76,14 @@ function DashboardPage() {
   ];
 
   if (isLoading) {
-    return <div className="lab-page"><section className="large-empty">학습 현황을 불러오고 있습니다.</section></div>;
+    return <div className="lab-page"><section className="large-empty">{t("loadingDashboard")}</section></div>;
   }
 
   if (errorMessage && !summary) {
     return (
       <div className="lab-page"><section className="large-empty">
         <strong>학습 현황을 불러오지 못했습니다.</strong><span>{errorMessage}</span>
-        <button type="button" className="lab-primary-link" onClick={handleReload}>다시 불러오기</button>
+        <button type="button" className="lab-primary-link" onClick={handleReload}>{t("retry")}</button>
       </section></div>
     );
   }

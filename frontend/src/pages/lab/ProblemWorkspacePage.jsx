@@ -5,9 +5,11 @@ import CodeEditor from "../../components/lab/CodeEditor";
 import TestCasePanel from "../../components/lab/TestCasePanel";
 import { publishSolutionToGitHub } from "../../services/githubApi";
 import { getProblem, submitSolution } from "../../services/problemApi";
+import { useLanguage } from "../../i18n/LanguageContext";
 import "./LabPages.css";
 
 function ProblemWorkspacePage() {
+  const { t } = useLanguage();
   const { problemId } = useParams();
 
   const [problem, setProblem] = useState(null);
@@ -88,7 +90,7 @@ function ProblemWorkspacePage() {
   }
 
   if (isLoading) {
-    return <div className="workspace-loading">문제를 불러오고 있습니다...</div>;
+    return <div className="workspace-loading">{t("loadingProblems")}</div>;
   }
 
   if (!problem) {

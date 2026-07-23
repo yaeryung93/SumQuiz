@@ -1,4 +1,4 @@
-import { FileUp, ListChecks, ScanSearch } from "lucide-react";
+import { BarChart3, Check, Code2 } from "lucide-react";
 import { Link } from "react-router";
 
 import LoginForm from "../components/login/LoginForm";
@@ -15,27 +15,27 @@ function LoginPage() {
 
       <main className="login-page__main">
         <section className="login-page__introduction">
-          <p className="login-page__eyebrow">Start Java learning with HWV</p>
-          <h1>내 Java 코드로 배우는<br /><span>맞춤형 문법 학습</span></h1>
+          <img className="login-page__intro-logo" src="/images/hwv-logo-cutout.png" alt="HWV" />
+          <p className="login-page__eyebrow">Java Learning Platform</p>
+          <h1>코드로 배우는<br />나만의 <span>Java</span> 학습</h1>
           <p className="login-page__description">
-            Java 파일을 업로드하면 AI가 코드의 핵심 문법을 분석하고
-            <br />코드에 맞춘 퀴즈로 학습을 이어갈 수 있어요.
+            HWV와 함께 더 깊이, 더 꾸준히 성장해요.
+            <br />오늘의 학습이 내일의 실력이 됩니다.
           </p>
 
-          <div className="login-page__features">
-            <div>
-              <span className="login-page__feature-icon"><FileUp aria-hidden="true" /><b>1</b></span>
-              <p><strong>파일 업로드</strong>Java 파일을 간편하게 등록하세요.</p>
+          <div className="login-page__learning-visual" aria-hidden="true">
+            <div className="login-page__code-card">
+              <Code2 />
+              <span /><span /><span />
             </div>
-            <div>
-              <span className="login-page__feature-icon"><ScanSearch aria-hidden="true" /><b>2</b></span>
-              <p><strong>문법 분석</strong>AI가 코드의 핵심 문법을 분석해 드려요.</p>
-            </div>
-            <div>
-              <span className="login-page__feature-icon"><ListChecks aria-hidden="true" /><b>3</b></span>
-              <p><strong>맞춤 퀴즈</strong>분석 결과를 바탕으로 맞춤 퀴즈를 풀어요.</p>
+            <div className="login-page__progress-card">
+              <div><Check /><span /></div>
+              <div><Check /><span /></div>
+              <div className="login-page__progress-empty"><i /><span /></div>
+              <section><BarChart3 /><p>학습 진행률<strong>72%</strong></p></section>
             </div>
           </div>
+          <div className="login-page__decoration-dots" aria-hidden="true">{Array.from({ length: 9 }, (_, index) => <i key={index} />)}</div>
         </section>
 
         <LoginForm />
